@@ -8,4 +8,11 @@ declare module "authUser/AuthUserHomePage" {
   export default AuthUserHomePage;
 }
 
+declare module "news/NewsHomePage" {
+  const NewsHomePage: React.ComponentType;
+  export default NewsHomePage;
+}
+
+
+
 
