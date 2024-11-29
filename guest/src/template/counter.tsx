@@ -1,3 +1,4 @@
+import { useCounterSession } from "./counterPersist";
 import { CounterStoreProvider, useCounterStore } from "./counterStore";
 
 const CounterPage = () => {
@@ -20,9 +21,10 @@ const CounterPage = () => {
 };
 
 const CounterTemplate = () => {
-  const counter = 3;
+  const { countSeesion } = useCounterSession((state) => state);
+
   return (
-    <CounterStoreProvider counter={counter as number}>
+    <CounterStoreProvider counter={countSeesion as number}>
       <CounterPage />
     </CounterStoreProvider>
   );
