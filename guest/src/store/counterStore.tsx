@@ -1,11 +1,19 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import {
-  CounterActionSession,
-  CounterStateSession,
-  defaultCounterState,
-} from "./counterPersistType";
+
+export type CounterStateSession = {
+  countSeesion: number;
+};
+
+export type CounterActionSession = {
+  addCounterSession(): void;
+  subtractCounterSession(): void;
+};
+
+export const defaultCounterState: CounterStateSession = {
+  countSeesion: 5,
+};
 
 export const useCounterSession = create(
   persist(

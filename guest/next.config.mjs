@@ -1,21 +1,9 @@
-import NextFederationPlugin from "@module-federation/nextjs-mf";
+import webpackConfig from "./src/config/webpack.config.mjs";
+import envConfig from "./src/config/envConfig.js";
 
 const nextConfig = {
-  reactStrictMode: true,
-  webpack: (config) => {
-    config.plugins.push(
-      new NextFederationPlugin({
-        name: "guest",
-        filename: "static/chunks/guestRemoteEntry.js",
-        exposes: {
-          "./GuestHomePage": "./src/pages/index",
-        },
-        shared: {},
-        extraOptions: {},
-      })
-    );
-    return config;
-  },
+  webpack: webpackConfig,
+  env: envConfig,
 };
 
 export default nextConfig;

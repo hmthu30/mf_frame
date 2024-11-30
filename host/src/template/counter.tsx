@@ -1,5 +1,5 @@
-import CounterStoreProviderWithProps from "./counterSt";
-import { useCounterStore } from "./counterSt";
+import CounterStoreProviderWithProps from "@/template/counterSt";
+import { useCounterStore } from "@/template/counterSt";
 
 const CounterPage = () => {
   const { count, incrementCount, decrementCount } = useCounterStore(

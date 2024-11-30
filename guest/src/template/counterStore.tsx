@@ -1,14 +1,21 @@
-import { useContext, useRef } from "react";
+import { createContext, ReactNode, useContext, useRef } from "react";
 import { useStore } from "zustand";
 import { createStore } from "zustand/vanilla";
-import {
-  CounterState,
-  CounterStore,
-  CounterStoreApi,
-  CounterStoreContext,
-  CounterStoreProviderProps,
-  defaultInitState,
-} from "./counterStoreType";
+
+export type CounterState = {
+  count: number;
+};
+
+export type CounterActions = {
+  decrementCount: () => void;
+  incrementCount: () => void;
+};
+
+export const defaultInitState: CounterState = {
+  count: 0,
+};
+
+export type CounterStore = CounterState & CounterActions;
 
 const createCounterStore = (initState: CounterState = defaultInitState) => {
   return createStore<CounterStore>()((set) => ({
@@ -17,6 +24,17 @@ const createCounterStore = (initState: CounterState = defaultInitState) => {
     incrementCount: () => set((state) => ({ count: state.count + 1 })),
   }));
 };
+
+export interface CounterStoreProviderProps {
+  children: ReactNode;
+  counter: number;
+}
+
+export type CounterStoreApi = ReturnType<typeof createCounterStore>;
+
+export const CounterStoreContext = createContext<CounterStoreApi | undefined>(
+  undefined
+);
 
 const CounterStoreProvider = <T extends object>({
   children,

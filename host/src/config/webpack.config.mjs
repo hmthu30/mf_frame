@@ -14,9 +14,9 @@ const webpackConfig = (config) => {
           "guest@http://localhost:8001/_next/static/chunks/guestRemoteEntry.js",
         authUser:
           "authUser@http://localhost:8002/_next/static/chunks/authUserRemoteEntry.js",
-        news:
-          "news@http://localhost:8003/_next/static/chunks/newsRemoteEntry.js"
+        news: "news@http://localhost:8003/_next/static/chunks/newsRemoteEntry.js",
       },
+      exposes: {},
       shared: {},
       extraOptions: {},
     })
