@@ -1,4 +1,6 @@
+import { createContextMutation } from "@/utils/MutationProvider";
 import { createContextStore } from "@/utils/zustand";
+import { useMutation } from "react-query";
 import { createStore } from "zustand/vanilla";
 
 export type CounterState = {
@@ -29,6 +31,28 @@ const [CounterStoreProvider, useCounterStore] = createContextStore<
 );
 
 export { useCounterStore };
+
+const myMutationFunction = async (data: { title: string; body: string }) => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to create post");
+  }
+
+  return response.json();
+};
+
+const [MyMutationProvider, useMyMutation] = createContextMutation(() => {
+  return useMutation(myMutationFunction);
+});
+
+export { MyMutationProvider, useMyMutation };
 
 export default function CounterStoreProviderWithProps({
   children,
