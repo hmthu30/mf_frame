@@ -1,16 +1,3 @@
-import {
-  RemoteGuestHome,
-  RemoteAuthUserHome,
-  RemoteNewsHome,
-} from "@/utils/remoteComponents";
+import HomeTemplate from "@/template/index/indexTemplate";
 
-export default function Home() {
-  return (
-    <>
-      <div className="text-6xl">Hello from host (8000)</div>
-      <RemoteGuestHome />
-      <RemoteAuthUserHome />
-      <RemoteNewsHome />
-    </>
-  );
-}
+export default HomeTemplate;

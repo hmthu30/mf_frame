@@ -9,7 +9,9 @@ const webpackConfig = (config) => {
     new NextFederationPlugin({
       name: "guest",
       filename: "static/chunks/guestRemoteEntry.js",
-      remotes: {},
+      remotes: {
+        host: "host@http://localhost:8000/_next/static/chunks/hostRemoteEntry.js",
+      },
       exposes: {
         "./GuestHomePage": "./src/pages/index",
       },

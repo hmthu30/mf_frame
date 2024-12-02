@@ -8,7 +8,7 @@ const webpackConfig = (config) => {
   config.plugins.push(
     new NextFederationPlugin({
       name: "host",
-      filename: "static/chunks/mainRemoteEntry.js",
+      filename: "static/chunks/hostRemoteEntry.js",
       remotes: {
         guest:
           "guest@http://localhost:8001/_next/static/chunks/guestRemoteEntry.js",
@@ -16,7 +16,9 @@ const webpackConfig = (config) => {
           "authUser@http://localhost:8002/_next/static/chunks/authUserRemoteEntry.js",
         news: "news@http://localhost:8003/_next/static/chunks/newsRemoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./ZustandConfig": "./src/utils/zustand",
+      },
       shared: {},
       extraOptions: {},
     })

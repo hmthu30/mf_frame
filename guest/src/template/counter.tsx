@@ -1,7 +1,10 @@
+import { ZustandConfigComponent } from "@/utils/remoteComponents";
 import CounterStoreProviderWithProps from "./counterSt";
 import { useCounterStore } from "./counterSt";
 
 const CounterPage = () => {
+  console.log("HELLO", ZustandConfigComponent);
+
   const { count, incrementCount, decrementCount } = useCounterStore(
     (state) => state
   );
