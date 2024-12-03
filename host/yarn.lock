@@ -2725,6 +2725,15 @@ merge2@^1.3.0:
   resolved "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
+mf-package@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/mf-package/-/mf-package-1.0.2.tgz#91c153fd1e5a54ffd22e0dcd12e07dd5c58e8f2f"
+  integrity sha512-NPz7ZSHB2/4xviXJSGeAZmwqYSrwIhiGB8VyV0pSvzx9V9jWuvY524s9BKYRPicgPmYSUVVLu2RpAJGmAJKGyQ==
+  dependencies:
+    react "^18.3.1"
+    react-query "^3.39.3"
+    zustand "^5.0.1"
+
 micromatch@^4.0.4, micromatch@^4.0.8:
   version "4.0.8"
   resolved "https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz"
