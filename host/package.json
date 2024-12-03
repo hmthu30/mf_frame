@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@module-federation/nextjs-mf": "^8.7.4",
+    "hmthu30-fe-package": "1.0.3",
     "i18next": "^24.0.2",
     "mf-package": "^1.0.2",
     "next": "^14.2.18",

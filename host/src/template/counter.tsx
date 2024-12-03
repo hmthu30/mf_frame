@@ -1,8 +1,8 @@
+import { MyMutationProvider, useMyMutation } from "@/template/counterStPackage";
 import CounterStoreProviderWithProps, {
-  MyMutationProvider,
-  useMyMutation,
-} from "@/template/counterSt";
-import { useCounterStore } from "@/template/counterSt";
+  useCounterStore,
+} from "@/template/counterStPackage";
+import { greet } from "hmthu30-fe-package";
 
 const CounterPage = () => {
   const { count, incrementCount, decrementCount } = useCounterStore(
@@ -20,6 +20,8 @@ const CounterPage = () => {
       console.error("Error creating post:", error);
     }
   };
+
+  console.log(greet("Post created"));
 
   return (
     <>
